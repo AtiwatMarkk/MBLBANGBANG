@@ -1,0 +1,104 @@
+body {
+  margin: 0; /* Remove default body margin */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  height: 100vh; /* Occupy full viewport height */
+  background: linear-gradient(to right, #f7cac9 0%, #ffe3ee 100%);
+  font-family: sans-serif;
+}
+
+nav {
+  display: grid;
+  padding: 10px 20px 0 20px;
+  grid-template-columns: 1fr auto; /* Flexible title, fixed filter width */
+  align-items: center; /* Vertically center content */
+}
+
+#item-filter {
+  width: 200px; /* Adjust width as needed */
+  padding-right: 25;
+}
+
+
+
+.content-wrapper {
+  flex: 1;  /* Fill remaining space after navigation */
+  padding: 1rem; /* Add some padding for content */
+}
+
+/* When you scale the navigation down (smaller height): */
+nav.collapsed {
+  height: 0;  /* Hides the navigation completely */
+}
+
+/* Table container styling */
+#item-table-container {
+  margin: 20px auto;  /* Add some margin for better placement */
+  border-radius: 10px;  /* Rounded corners for a modern look */
+  overflow: auto;  /* Enable scrolling if table content overflows */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  /* Subtle shadow effect */
+}
+
+/* Table styling */
+.item-table {
+  width: 100%; /* Make the table fill the container */
+  border-collapse: collapse; /* Remove space between cells */
+  background-color: #fff;  /* White background for table content */
+}
+
+.item-table th,
+.item-table td {
+  padding: 15px; /* Increase padding for better spacing */
+  border: 1px solid #ddd; /* Add borders to cells */
+  text-align: left; /* Align text to the left */
+  font-family: 'Kanit', sans-serif;
+}
+
+.item-table th {
+  background-color: #f2f2f2; /* Light gray for headers */
+  font-weight: bold; /* Make headers bold */
+  position: sticky;
+}
+
+th {
+  position: sticky;
+  top: 0; /* Stick to the top of the viewport */
+  background-color: #f0f0f0; /* Example background color */
+  /* Optional: Add padding and border for better visibility */
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style the images to have a width of 50px */
+.item-table img {
+  width: 70px;
+  height: auto; /* Maintain aspect ratio */
+}
+.item-table .img {
+  width: 130px;
+  align-items: center;
+  height: auto; /* Maintain aspect ratio */
+}
+.item-table .property {
+  width: 200px;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Filter input styling */
+#item-filter {
+  display: block;  /* Make the input display on a new line */
+  margin: 10px auto;  /* Add some margin for better placement */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;  /* Rounded corners for the input field */
+}
+
+/* Add responsiveness for smaller screens */
+@media only screen and (max-width: 768px) {
+  .item-table {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+  #item-filter {
+    width: 80%; /* Adjust input width for smaller screens */
+  }
+}
